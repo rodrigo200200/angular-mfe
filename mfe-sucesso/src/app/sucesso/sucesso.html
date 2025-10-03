@@ -1,0 +1,45 @@
+<div class="sucesso-container">
+  <div class="sucesso-card">
+    <div class="success-icon">
+      ✅
+    </div>
+    
+    <h2>Cadastro Realizado com Sucesso!</h2>
+    
+    <div class="user-data" *ngIf="user">
+      <h3>Dados Cadastrados:</h3>
+      <div class="user-info">
+        <p><strong>Nome:</strong> {{ user.name }}</p>
+        <p><strong>E-mail:</strong> {{ user.email }}</p>
+        <p><strong>ID:</strong> {{ user.id }}</p>
+      </div>
+    </div>
+
+    <div class="all-users-section">
+      <h3>Todos os Usuários Cadastrados:</h3>
+      
+      <div *ngIf="loading" class="loading">
+        Carregando usuários...
+      </div>
+      
+      <div *ngIf="!loading && allUsers.length === 0" class="no-users">
+        Nenhum usuário encontrado.
+      </div>
+      
+      <div *ngIf="!loading && allUsers.length > 0" class="users-list">
+        <div *ngFor="let user of allUsers" class="user-item">
+          <div class="user-avatar">{{ user.name.charAt(0).toUpperCase() }}</div>
+          <div class="user-details">
+            <p class="user-name">{{ user.name }}</p>
+            <p class="user-email">{{ user.email }}</p>
+          </div>
+          <div class="user-id">#{{ user.id }}</div>
+        </div>
+      </div>
+    </div>
+
+    <button class="back-button" (click)="voltarAoCadastro()">
+      Cadastrar Novo Usuário
+    </button>
+  </div>
+</div>

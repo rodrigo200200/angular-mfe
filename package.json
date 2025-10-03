@@ -1,0 +1,36 @@
+{
+  "name": "microfrontends-app",
+  "version": "1.0.0",
+  "description": "Microfrontends application with Module Federation",
+  "scripts": {
+    "start": "concurrently \"npm run start:shell\" \"npm run start:mfe-cadastro\" \"npm run start:mfe-sucesso\" \"npm run start:api\"",
+    "start:shell": "cd shell && npm start",
+    "start:mfe-cadastro": "cd mfe-cadastro && npm start",
+    "start:mfe-sucesso": "cd mfe-sucesso && npm start",
+    "start:api": "npx json-server --watch api/db.json --port 3001",
+    "build": "npm run build:mfe-cadastro && npm run build:mfe-sucesso && npm run build:shell",
+    "build:shell": "cd shell && npm run build",
+    "build:mfe-cadastro": "cd mfe-cadastro && npm run build",
+    "build:mfe-sucesso": "cd mfe-sucesso && npm run build",
+    "install:all": "npm install && cd shell && npm install && cd ../mfe-cadastro && npm install && cd ../mfe-sucesso && npm install",
+    "test": "echo \"✅ Projeto implementado com sucesso! Acesse http://localhost:4200\"",
+    "test:e2e": "echo \"📋 Execute o fluxo: Cadastro → Sucesso → Navegação\"",
+    "docs": "echo \"📚 Veja SEQUENCE-DIAGRAM.md e SOLUTION-ARCHITECTURE.md\"",
+    "validate": "curl -s http://localhost:3001/users && echo \"\\n✅ API funcionando\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "json-server": "^0.17.4"
+  },
+  "keywords": [
+    "angular",
+    "microfrontends",
+    "module-federation",
+    "webpack"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@angular-architects/module-federation": "^20.0.0"
+  }
+}

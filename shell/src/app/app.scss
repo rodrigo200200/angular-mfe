@@ -1,0 +1,72 @@
+.shell-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.shell-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .shell-nav {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+      font-weight: 500;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      &.active {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      &.status-link {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+}
+
+.shell-main {
+  flex: 1;
+  background: #f8f9fa;
+  min-height: calc(100vh - 120px);
+}
+
+.shell-footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+
+  p {
+    margin: 0;
+    font-size: 0.875rem;
+  }
+}
+
+// Global styles for MFEs
+:host ::ng-deep {
+  router-outlet + * {
+    width: 100%;
+    min-height: 100%;
+  }
+}

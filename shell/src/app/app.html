@@ -1,0 +1,18 @@
+<div class="shell-container">
+  <header class="shell-header">
+    <h1>{{ title }}</h1>
+    <nav class="shell-nav">
+      <a routerLink="/cadastro" routerLinkActive="active" class="nav-link">Cadastro</a>
+      <a routerLink="/sucesso" routerLinkActive="active" class="nav-link">Sucesso</a>
+      <a routerLink="/status" routerLinkActive="active" class="nav-link status-link">Status</a>
+    </nav>
+  </header>
+  
+  <main class="shell-main">
+    <router-outlet></router-outlet>
+  </main>
+  
+  <footer class="shell-footer">
+    <p>&copy; 2025 - Microfrontends com Module Federation - Angular 15+</p>
+  </footer>
+</div>

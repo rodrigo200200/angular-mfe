@@ -1,0 +1,10 @@
+{
+  "name": "@shared/communication",
+  "version": "1.0.0",
+  "description": "Shared communication library for MFEs",
+  "main": "index.ts",
+  "peerDependencies": {
+    "@angular/core": "^15.0.0",
+    "rxjs": "^7.0.0"
+  }
+}
